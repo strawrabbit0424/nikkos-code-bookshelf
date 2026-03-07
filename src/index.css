@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  :root {
+    --background: theme('colors.palenight.bg');
+    --foreground: theme('colors.palenight.text');
+    --card: theme('colors.palenight.surface');
+    --muted: theme('colors.palenight.comment');
+    --accent: theme('colors.palenight.cyan');
+  }
+
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)] min-h-screen overflow-hidden;
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+pre, code {
+  @apply bg-palenight-surface/80 rounded-lg p-5 text-sm leading-relaxed font-mono;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
