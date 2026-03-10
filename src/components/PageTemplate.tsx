@@ -76,7 +76,6 @@ export function Table({ headers, rows }: { headers: string[]; rows: string[][] }
               <td key={ci} style={{
                 padding: '3px 5px',
                 border: '1px solid #dbd6ee',
-                // ── FIX: dark navy blue instead of cyan on white ──
                 color: ci === 0 ? '#1e3a8a' : '#374151',
                 fontFamily: ci === 0 ? 'JetBrains Mono,monospace' : undefined,
                 fontSize: ci === 0 ? 8 : 8.5,
@@ -91,7 +90,7 @@ export function Table({ headers, rows }: { headers: string[]; rows: string[][] }
   );
 }
 
-/* ── Code block ────────────────────────────────────────── */
+
 
 type Span = { text: string; cls?: string };
 
@@ -121,7 +120,7 @@ function spansToHtml(spans: Span[]): string {
   }).join('');
 }
 
-// Texto explicativo — párrafo de contexto sobre un tema
+// Texto explicativo. párrafo de contexto sobre un tema
 export function Note({ children }: { children: React.ReactNode }) {
   return (
     <p style={{ fontSize: 9, color: '#374151', lineHeight: 1.6, margin: '3px 0 7px', fontStyle: 'italic', borderLeft: '2px solid #c792ea', paddingLeft: 7 }}>
@@ -130,7 +129,7 @@ export function Note({ children }: { children: React.ReactNode }) {
   );
 }
 
-// Advertencia o dato importante
+// Advertencias o datos interesantes
 export function Tip({ children }: { children: React.ReactNode }) {
   return (
     <p style={{ fontSize: 9, color: '#374151', lineHeight: 1.6, margin: '3px 0 7px', borderLeft: '2px solid #ffcb6b', paddingLeft: 7, background: 'rgba(255,203,107,.06)', borderRadius: '0 3px 3px 0', padding: '4px 4px 4px 7px' }}>
@@ -151,7 +150,6 @@ export function Code({ spans }: { spans: Span[] }) {
         fontFamily: 'JetBrains Mono,monospace',
         fontSize: 8.5,
         lineHeight: 1.65,
-        // ── FIX: overflow hidden + no scroll to prevent bleed ──
         overflow: 'hidden',
         margin: '3px 0 7px',
         color: '#a6accd',
